@@ -1,0 +1,39 @@
+{
+    "name": "minimal-ide",
+    "description": "A fork of the Legacy IDE",
+    "version": "0.1.0",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "/*.js",
+        "/*.html",
+        "test",
+        "tests"
+    ],
+    "authors": [
+        {
+            "name": "Sebastian Sastre",
+            "email": "sebastian@flowingconcept.com"
+        }
+    ],
+    "homepage": "https://github.com/sebastianconcept/amber-minimal-ide",
+    "keywords": [
+        "Amber",
+        "Smalltalk"
+    ],
+    "license": [
+        "MIT"
+    ],
+    "private": false,
+    "dependencies": {
+        "amber": ">=0.14.4",
+        "jquery-ui": ">=1.9.2",
+        "codemirror": "^4.7.0",
+        "require-css": "^0.1.2"
+    },
+    "devDependencies": {
+        "amber-ide-starter-dialog": "^0.1.0",
+        "helios": "^0.3.0"
+    }
+}

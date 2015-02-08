@@ -211,9 +211,9 @@ selection
 
 setEditorOn: aTextarea
 	<self['@editor'] = self._class()._codeMirror().fromTextArea(aTextarea, {
-		theme: 'ide.codeMirrorTheme'._settingValueIfAbsent_('default'),
+		theme: 'amber-minimal-ide.lineNumbers.codeMirrorTheme'._settingValueIfAbsent_('default'),
 		mode: 'text/x-stsrc',
-		lineNumbers: true,
+		lineNumbers: 'amber-minimal-ide.lineNumbers'._settingValueIfAbsent_(false),
 		enterMode: 'flat',
 		indentWithTabs: true,
 		indentUnit: 4,

@@ -323,16 +323,17 @@ body.amberBody {
     list-style-type: none;
     padding-left: 5px;
     cursor: pointer;
-    color: #111;
+    /*color: #111;*/
 }
 
 .amberTool .amber_column li.selected {
 	background: #c5c5c5;
-	color: #222;
+	/*color: #222;*/
 }
 
 .amberTool .amber_column li:hover {
     background: #08c;
+    color: white;
 }
 
 #amber .amberTool .amber_tabs {

@@ -5,6 +5,7 @@ February 8, 2015 - Release 0.1.0
 * Migrates the code on amber-attic/IDE to amber-minimal-ide/MinimalIDE
 * Removes unused dependencies
 * Adjusts .gitignore to suit an Amber library
+* Adjusts default CodeMirror theme
 
 
 Previous history is in the git commits of amber-smalltalk/amber-attic.

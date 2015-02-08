@@ -1342,7 +1342,7 @@ var self=this;
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 self['@editor'] = self._class()._codeMirror().fromTextArea(aTextarea, {
-		theme: 'amber-minimal-ide.lineNumbers.codeMirrorTheme'._settingValueIfAbsent_('default'),
+		theme: 'amber-minimal-ide.codeMirrorTheme'._settingValueIfAbsent_('minimal-light'),
 		mode: 'text/x-stsrc',
 		lineNumbers: 'amber-minimal-ide.lineNumbers'._settingValueIfAbsent_(false),
 		enterMode: 'flat',
@@ -1358,7 +1358,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["aTextarea"],
-source: "setEditorOn: aTextarea\x0a\x09<self['@editor'] = self._class()._codeMirror().fromTextArea(aTextarea, {\x0a\x09\x09theme: 'amber-minimal-ide.lineNumbers.codeMirrorTheme'._settingValueIfAbsent_('default'),\x0a\x09\x09mode: 'text/x-stsrc',\x0a\x09\x09lineNumbers: 'amber-minimal-ide.lineNumbers'._settingValueIfAbsent_(false),\x0a\x09\x09enterMode: 'flat',\x0a\x09\x09indentWithTabs: true,\x0a\x09\x09indentUnit: 4,\x0a\x09\x09matchBrackets: true,\x0a\x09\x09electricChars: false\x0a\x09})>",
+source: "setEditorOn: aTextarea\x0a\x09<self['@editor'] = self._class()._codeMirror().fromTextArea(aTextarea, {\x0a\x09\x09theme: 'amber-minimal-ide.codeMirrorTheme'._settingValueIfAbsent_('minimal-light'),\x0a\x09\x09mode: 'text/x-stsrc',\x0a\x09\x09lineNumbers: 'amber-minimal-ide.lineNumbers'._settingValueIfAbsent_(false),\x0a\x09\x09enterMode: 'flat',\x0a\x09\x09indentWithTabs: true,\x0a\x09\x09indentUnit: 4,\x0a\x09\x09matchBrackets: true,\x0a\x09\x09electricChars: false\x0a\x09})>",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: []

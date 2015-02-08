@@ -4,7 +4,9 @@
     },
     "shim": {
         "codemirror/lib/codemirror": {
-            "deps": [ "css!codemirror/lib/codemirror" ]
+            "deps": [ 
+            	"css!codemirror/lib/codemirror",
+            	"css!amber-minimal-ide/resources/minimal-light" ]
         }
     }
 }

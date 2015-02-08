@@ -236,6 +236,11 @@ clear
 	self val: ''
 !
 
+closeTab
+
+	TabManager current closeTab
+!
+
 doIt
 	| result |
 	result := self eval: self currentLineOrSelection.
@@ -273,6 +278,11 @@ handleKeyDown: anEvent
 		}
 		if(anEvent.keyCode === 73) { //ctrl+i
 			self._inspectIt();
+			anEvent.preventDefault();
+			return false;
+		}
+		if(anEvent.keyCode === 87) { //ctrl+w
+			self._closeTab();
 			anEvent.preventDefault();
 			return false;
 		}
@@ -374,6 +384,12 @@ close
 	self removeBodyMargin.
 	'body' asJQuery removeClass: 'amberBody'.
 	opened := false ]
+!
+
+closeTab
+
+	selectedTab canBeClosed ifTrue: [
+		self closeTab: selectedTab ]
 !
 
 closeTab: aWidget
@@ -1059,6 +1075,13 @@ initialize
 	selectedTab := #instance.
 	selectedPackage := self packages first.
 	unsavedChanges := false
+! !
+
+!Browser methodsFor: 'reactions'!
+
+onPackagesKeyUp: anEvent
+
+	console log: anEvent
 ! !
 
 !Browser methodsFor: 'rendering'!

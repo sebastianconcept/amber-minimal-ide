@@ -730,6 +730,31 @@ $globals.SourceArea);
 
 $core.addMethod(
 $core.method({
+selector: "closeTab",
+protocol: 'actions',
+fn: function (){
+var self=this;
+function $TabManager(){return $globals.TabManager||(typeof TabManager=="undefined"?nil:TabManager)}
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+$recv($recv($TabManager())._current())._closeTab();
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"closeTab",{},$globals.SourceArea)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "closeTab\x0a\x0a\x09TabManager current closeTab",
+referencedClasses: ["TabManager"],
+//>>excludeEnd("ide");
+messageSends: ["closeTab", "current"]
+}),
+$globals.SourceArea);
+
+$core.addMethod(
+$core.method({
 selector: "currentLine",
 protocol: 'accessing',
 fn: function (){
@@ -964,6 +989,11 @@ if(anEvent.ctrlKey) {
 			anEvent.preventDefault();
 			return false;
 		}
+		if(anEvent.keyCode === 87) { //ctrl+w
+			self._closeTab();
+			anEvent.preventDefault();
+			return false;
+		}
 	};
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -972,7 +1002,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anEvent"],
-source: "handleKeyDown: anEvent\x0a\x09<if(anEvent.ctrlKey) {\x0a\x09\x09if(anEvent.keyCode === 80) { //ctrl+p\x0a\x09\x09\x09self._printIt();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09\x09if(anEvent.keyCode === 68) { //ctrl+d\x0a\x09\x09\x09self._doIt();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09\x09if(anEvent.keyCode === 73) { //ctrl+i\x0a\x09\x09\x09self._inspectIt();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09}>",
+source: "handleKeyDown: anEvent\x0a\x09<if(anEvent.ctrlKey) {\x0a\x09\x09if(anEvent.keyCode === 80) { //ctrl+p\x0a\x09\x09\x09self._printIt();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09\x09if(anEvent.keyCode === 68) { //ctrl+d\x0a\x09\x09\x09self._doIt();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09\x09if(anEvent.keyCode === 73) { //ctrl+i\x0a\x09\x09\x09self._inspectIt();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09\x09if(anEvent.keyCode === 87) { //ctrl+w\x0a\x09\x09\x09self._closeTab();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09}>",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: []
@@ -1569,6 +1599,34 @@ source: "close\x0a\x09opened ifTrue: [\x0a\x09'#amber' asJQuery hide.\x0a\x09ul 
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["ifTrue:", "hide", "asJQuery", "removeBodyMargin", "removeClass:"]
+}),
+$globals.TabManager);
+
+$core.addMethod(
+$core.method({
+selector: "closeTab",
+protocol: 'actions',
+fn: function (){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+var $1;
+$1=$recv(self["@selectedTab"])._canBeClosed();
+if($core.assert($1)){
+self._closeTab_(self["@selectedTab"]);
+};
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"closeTab",{},$globals.TabManager)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "closeTab\x0a\x0a\x09selectedTab canBeClosed ifTrue: [\x0a\x09\x09self closeTab: selectedTab ]",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["ifTrue:", "canBeClosed", "closeTab:"]
 }),
 $globals.TabManager);
 
@@ -3978,6 +4036,30 @@ source: "methods\x0a\x09| klass |\x0a\x09selectedTab = #comment ifTrue: [ ^ #() 
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["ifTrue:", "=", "ifNotNil:", "ifTrue:ifFalse:", "class", "sort:", "ifNil:ifNotNil:", "values", "methodDictionary", "methodsInProtocol:", "<", "selector"]
+}),
+$globals.Browser);
+
+$core.addMethod(
+$core.method({
+selector: "onPackagesKeyUp:",
+protocol: 'reactions',
+fn: function (anEvent){
+var self=this;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+$recv(console)._log_(anEvent);
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"onPackagesKeyUp:",{anEvent:anEvent},$globals.Browser)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: ["anEvent"],
+source: "onPackagesKeyUp: anEvent\x0a\x0a\x09console log: anEvent",
+referencedClasses: [],
+//>>excludeEnd("ide");
+messageSends: ["log:"]
 }),
 $globals.Browser);
 

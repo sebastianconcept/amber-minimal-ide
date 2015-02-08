@@ -286,6 +286,11 @@ handleKeyDown: anEvent
 			anEvent.preventDefault();
 			return false;
 		}
+		if(anEvent.keyCode === 70) { //ctrl+f
+			self._search();
+			anEvent.preventDefault();
+			return false;
+		}
 	}>
 !
 
@@ -316,6 +321,11 @@ print: aString
 printIt
 	self print: self doIt printString.
 	self focus.
+!
+
+search
+
+	'#search' asJQuery focus
 ! !
 
 !SourceArea methodsFor: 'events'!

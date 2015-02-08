@@ -153,7 +153,6 @@ body.amberBody {
     left: 0;
     top: 49px;
     z-index: 1000;
-    background: white;
 }
 
 .amberTool .amber_box {
@@ -256,7 +255,6 @@ body.amberBody {
     font-size: 12px;
     line-height: 1.3em;
     height: 100%;
-    background: white;
 }
 
 .amberTool .CodeMirror-scroll {
@@ -335,7 +333,6 @@ body.amberBody {
 
 .amberTool .amber_column li:hover {
     background: #08c;
-    color: white;
 }
 
 #amber .amberTool .amber_tabs {
@@ -494,7 +491,6 @@ body.amberBody {
 	left: 50%;
 	width: 50%;
 	outline: 1px solid #aaa;
-	background: white;
 	height: 40px
 }
 
@@ -518,7 +514,6 @@ body.amberBody {
 	left: 50%;
 	width: 50%;
 	top: 40px;
-	background: white;
 	outline: 1px solid #aaa;
 	min-height: 20px
 }

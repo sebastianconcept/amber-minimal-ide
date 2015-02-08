@@ -545,3 +545,8 @@ body.amberBody {
 .CodeMirror pre {
 	line-height: 14px;
 }
+
+#run-tests {
+    position: relative;
+    left: 25%;
+}

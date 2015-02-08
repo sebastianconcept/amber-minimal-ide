@@ -1,6 +1,6 @@
 define("amber-minimal-ide/MinimalIDE", ["amber/boot"
 //>>excludeStart("imports", pragmas.excludeImports);
-, "codemirror/addon/hint/show-hint", "codemirror/lib/codemirror", "codemirror/mode/smalltalk/smalltalk", "css!./resources/amber", "css!codemirror/addon/hint/show-hint", "css!codemirror/lib/codemirror", "css!codemirror/theme/ambiance", "jquery-ui"
+, "codemirror/addon/hint/show-hint", "codemirror/lib/codemirror", "codemirror/mode/smalltalk/smalltalk", "css!./resources/amber", "css!codemirror/addon/hint/show-hint", "css!codemirror/lib/codemirror", "css!resources/minimal-light", "jquery-ui"
 //>>excludeEnd("imports");
 , "amber_core/Web", "amber_core/Kernel-Objects", "amber_core/Kernel-Collections", "amber_core/Kernel-Methods"], function($boot
 //>>excludeStart("imports", pragmas.excludeImports);
@@ -10,7 +10,7 @@ define("amber-minimal-ide/MinimalIDE", ["amber/boot"
 var $core=$boot.api,nil=$boot.nil,$recv=$boot.asReceiver,$globals=$boot.globals;
 $core.addPackage('MinimalIDE');
 $core.packages["MinimalIDE"].innerEval = function (expr) { return eval(expr); };
-$core.packages["MinimalIDE"].imports = ["codemirror/addon/hint/show-hint", "codemirror/lib/codemirror", "codemirror/mode/smalltalk/smalltalk", "css!./resources/amber", "css!codemirror/addon/hint/show-hint", "css!codemirror/lib/codemirror", "css!codemirror/theme/ambiance", "jquery-ui"];
+$core.packages["MinimalIDE"].imports = ["codemirror/addon/hint/show-hint", "codemirror/lib/codemirror", "codemirror/mode/smalltalk/smalltalk", "css!./resources/amber", "css!codemirror/addon/hint/show-hint", "css!codemirror/lib/codemirror", "css!resources/minimal-light", "jquery-ui"];
 $core.packages["MinimalIDE"].transport = {"type":"amd","amdNamespace":"amber-minimal-ide"};
 
 $core.addClass('ClassesList', $globals.Widget, ['browser', 'ul', 'nodes'], 'MinimalIDE');
@@ -9823,6 +9823,7 @@ return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
 var $1,$2;
 $1=$recv(html)._button();
+$recv($1)._id_("run-tests");
 $recv($1)._with_("Run selected");
 $2=$recv($1)._onClick_((function(){
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -9840,10 +9841,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderButtonsOn: html\x0a\x09html button\x0a\x09with: 'Run selected';\x0a\x09onClick: [ self run: self testCases ]",
+source: "renderButtonsOn: html\x0a\x09html button\x0a\x09\x09id: 'run-tests';\x0a\x09\x09with: 'Run selected';\x0a\x09\x09onClick: [ self run: self testCases ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["with:", "button", "onClick:", "run:", "testCases"]
+messageSends: ["id:", "button", "with:", "onClick:", "run:", "testCases"]
 }),
 $globals.TestRunner);
 

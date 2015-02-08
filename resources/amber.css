@@ -90,8 +90,9 @@ body.amberBody {
 }
 
 #amber, #amber button, #amber input, #amber select {
-       font-family: Lucida Grande, Tahoma, sans-serif;
-       font-size: 11px;
+    font-family:  Consolas, Menlo, Monaco, Helvetica, "DejaVu Sans", sans-serif;
+      /*font-family: Lucida Grande, Tahoma, sans-serif;*/
+    font-size: 12px;
 }
 
 #amber #logo {
@@ -298,7 +299,7 @@ body.amberBody {
 }
 
 .amberTool .amber_column.classes {
-    left: 25%
+    left: 25%;
 }
 
 .amberTool .amber_column.classes ul {
@@ -323,7 +324,6 @@ body.amberBody {
     padding-left: 5px;
     cursor: pointer;
     color: #111;
-    font-weight: bold;
 }
 
 .amberTool .amber_column li.selected {
@@ -478,7 +478,7 @@ body.amberBody {
 .amberTool .amber_column.sunit.classes li.all,
 .amberTool .amber_column.sunit.categories li.all {
 	background: #e3e3e3;
-	/*font-weight: bold*/
+	font-weight: bold
 }
 
 .amberTool .amber_column.sunit.classes li.all:hover ,

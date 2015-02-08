@@ -401,12 +401,13 @@ onWindowResize: aBlock
 
 open
 	opened ifFalse: [
-	'body' asJQuery addClass: 'amberBody'.
-	'#amber' asJQuery show.
-	ul asJQuery show.
-	self updateBodyMargin.
-	selectedTab show.
-	opened := true ]
+		'body' asJQuery addClass: 'amberBody'.
+		'#amber' asJQuery show.
+		ul asJQuery show.
+		self updateBodyMargin.
+		selectedTab show.
+		'#search' asJQuery focus.
+		opened := true ]
 !
 
 removeBodyMargin
@@ -527,6 +528,7 @@ renderToolbarOn: html
 		id: 'amber_toolbar';
 		with: [
 			input := html input
+				id: 'search';
 				class: 'implementors';
 				at: #placeholder put: 'Search classes, methods and strings...';
 				yourself.

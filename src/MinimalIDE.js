@@ -1826,7 +1826,7 @@ var self=this;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 return $core.withContext(function($ctx1) {
 //>>excludeEnd("ctx");
-var $1,$2,$3;
+var $1,$2,$3,$4;
 $1=self["@opened"];
 if(!$core.assert($1)){
 $2="body"._asJQuery();
@@ -1842,12 +1842,17 @@ $recv($3)._show();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["show"]=1;
 //>>excludeEnd("ctx");
-$recv($recv(self["@ul"])._asJQuery())._show();
+$4=$recv(self["@ul"])._asJQuery();
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["asJQuery"]=3;
+//>>excludeEnd("ctx");
+$recv($4)._show();
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
 $ctx1.sendIdx["show"]=2;
 //>>excludeEnd("ctx");
 self._updateBodyMargin();
 $recv(self["@selectedTab"])._show();
+$recv("#search"._asJQuery())._focus();
 self["@opened"]=true;
 self["@opened"];
 };
@@ -1858,10 +1863,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "open\x0a\x09opened ifFalse: [\x0a\x09'body' asJQuery addClass: 'amberBody'.\x0a\x09'#amber' asJQuery show.\x0a\x09ul asJQuery show.\x0a\x09self updateBodyMargin.\x0a\x09selectedTab show.\x0a\x09opened := true ]",
+source: "open\x0a\x09opened ifFalse: [\x0a\x09\x09'body' asJQuery addClass: 'amberBody'.\x0a\x09\x09'#amber' asJQuery show.\x0a\x09\x09ul asJQuery show.\x0a\x09\x09self updateBodyMargin.\x0a\x09\x09selectedTab show.\x0a\x09\x09'#search' asJQuery focus.\x0a\x09\x09opened := true ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["ifFalse:", "addClass:", "asJQuery", "show", "updateBodyMargin"]
+messageSends: ["ifFalse:", "addClass:", "asJQuery", "show", "updateBodyMargin", "focus"]
 }),
 $globals.TabManager);
 
@@ -2173,6 +2178,10 @@ $2=$recv($1)._with_((function(){
 return $core.withContext(function($ctx2) {
 //>>excludeEnd("ctx");
 $3=$recv(html)._input();
+$recv($3)._id_("search");
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx2.sendIdx["id:"]=2;
+//>>excludeEnd("ctx");
 $recv($3)._class_("implementors");
 $recv($3)._at_put_("placeholder","Search classes, methods and strings...");
 $4=$recv($3)._yourself();
@@ -2213,10 +2222,10 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["html"],
-source: "renderToolbarOn: html\x0a\x09html div\x0a\x09\x09id: 'amber_toolbar';\x0a\x09\x09with: [\x0a\x09\x09\x09input := html input\x0a\x09\x09\x09\x09class: 'implementors';\x0a\x09\x09\x09\x09at: #placeholder put: 'Search classes, methods and strings...';\x0a\x09\x09\x09\x09yourself.\x0a\x09\x09\x09input onKeyPress: [ :event |\x0a\x09\x09\x09\x09event keyCode = 13 ifTrue: [\x0a\x09\x09\x09\x09self search: input asJQuery val ]].\x0a\x09\x09\x09html div id: 'amber_close'; onClick: [ self close ]]",
+source: "renderToolbarOn: html\x0a\x09html div\x0a\x09\x09id: 'amber_toolbar';\x0a\x09\x09with: [\x0a\x09\x09\x09input := html input\x0a\x09\x09\x09\x09id: 'search';\x0a\x09\x09\x09\x09class: 'implementors';\x0a\x09\x09\x09\x09at: #placeholder put: 'Search classes, methods and strings...';\x0a\x09\x09\x09\x09yourself.\x0a\x09\x09\x09input onKeyPress: [ :event |\x0a\x09\x09\x09\x09event keyCode = 13 ifTrue: [\x0a\x09\x09\x09\x09self search: input asJQuery val ]].\x0a\x09\x09\x09html div id: 'amber_close'; onClick: [ self close ]]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["id:", "div", "with:", "class:", "input", "at:put:", "yourself", "onKeyPress:", "ifTrue:", "=", "keyCode", "search:", "val", "asJQuery", "onClick:", "close"]
+messageSends: ["id:", "div", "with:", "input", "class:", "at:put:", "yourself", "onKeyPress:", "ifTrue:", "=", "keyCode", "search:", "val", "asJQuery", "onClick:", "close"]
 }),
 $globals.TabManager);
 

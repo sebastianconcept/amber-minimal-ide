@@ -241,17 +241,17 @@ body.amberBody {
 .amberTool textarea,
 .amberTool input {
     border: 0 none;
-    font-family:  "DejaVu Sans", Helvetica, sans-serif;
+    font-family:  Consolas, Menlo, Monaco, Helvetica, "DejaVu Sans", sans-serif;
     line-height: 1.3em;
-    font-size: 11px;
+    font-size: 12px;
     position: relative;
     padding: 0;
 }
 
 .amberTool .CodeMirror {
     border: 0 none;
-    font-family:  "DejaVu Sans", Helvetica, sans-serif;
-    font-size: 11px;
+    font-family:  Consolas, Menlo, Monaco, Helvetica, "DejaVu Sans", sans-serif;
+    font-size: 12px;
     line-height: 1.3em;
     height: 100%;
     background: white;
@@ -262,7 +262,7 @@ body.amberBody {
 }
 
 .amberTool .CodeMirror-scroll pre {
-    font-family: "DejaVu Sans", Helvetica, sans-serif;
+    font-family:  Consolas, Menlo, Monaco, Helvetica, "DejaVu Sans", sans-serif;
 }
 
 .amberTool .amber_clear {
@@ -478,7 +478,7 @@ body.amberBody {
 .amberTool .amber_column.sunit.classes li.all,
 .amberTool .amber_column.sunit.categories li.all {
 	background: #e3e3e3;
-	font-weight: bold
+	/*font-weight: bold*/
 }
 
 .amberTool .amber_column.sunit.classes li.all:hover ,

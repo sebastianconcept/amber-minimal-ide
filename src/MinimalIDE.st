@@ -528,6 +528,7 @@ renderToolbarOn: html
 		with: [
 			input := html input
 				class: 'implementors';
+				at: #placeholder put: 'Search classes, methods and strings...';
 				yourself.
 			input onKeyPress: [ :event |
 				event keyCode = 13 ifTrue: [

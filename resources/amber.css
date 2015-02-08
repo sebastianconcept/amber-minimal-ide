@@ -110,9 +110,10 @@ body.amberBody {
 }
 
 #amber #amber_toolbar input {
-    margin-left: 50px;
-    width: 250px;
+    margin-left: 37px;
+    width: 300px;
     margin-top: 5px;
+    padding: 2px 0 0 2px;
 }
 
 #amber #amber_toolbar #amber_close {

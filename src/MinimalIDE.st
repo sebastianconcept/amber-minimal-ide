@@ -698,8 +698,8 @@ dummyMethodSource
 
 label
 	^ selectedClass
-	ifNil: [ 'Browser (nil)' ]
-	ifNotNil: [ 'Browser: ', selectedClass name ]
+		ifNil: [ 'Browser' ]
+		ifNotNil: [ selectedClass name ]
 !
 
 metaclassDeclarationSource

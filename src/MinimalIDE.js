@@ -3785,9 +3785,9 @@ return $core.withContext(function($ctx1) {
 var $2,$1,$receiver;
 $2=self["@selectedClass"];
 if(($receiver = $2) == null || $receiver.isNil){
-$1="Browser (nil)";
+$1="Browser";
 } else {
-$1="Browser: ".__comma($recv(self["@selectedClass"])._name());
+$1=$recv(self["@selectedClass"])._name();
 };
 return $1;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -3796,10 +3796,10 @@ return $1;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "label\x0a\x09^ selectedClass\x0a\x09ifNil: [ 'Browser (nil)' ]\x0a\x09ifNotNil: [ 'Browser: ', selectedClass name ]",
+source: "label\x0a\x09^ selectedClass\x0a\x09\x09ifNil: [ 'Browser' ]\x0a\x09\x09ifNotNil: [ selectedClass name ]",
 referencedClasses: [],
 //>>excludeEnd("ide");
-messageSends: ["ifNil:ifNotNil:", ",", "name"]
+messageSends: ["ifNil:ifNotNil:", "name"]
 }),
 $globals.Browser);
 

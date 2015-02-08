@@ -232,6 +232,15 @@ val: aString
 
 !SourceArea methodsFor: 'actions'!
 
+browseIt
+	| result |
+	
+	result := self doIt.
+	result isClass
+		ifTrue: [ Browser openOn: result ]
+		ifFalse: [ Browser openOn: result class ]
+!
+
 clear
 	self val: ''
 !
@@ -288,6 +297,11 @@ handleKeyDown: anEvent
 		}
 		if(anEvent.keyCode === 70) { //ctrl+f
 			self._search();
+			anEvent.preventDefault();
+			return false;
+		}
+		if(anEvent.keyCode === 66) { //ctrl+b
+			self._browseIt();
 			anEvent.preventDefault();
 			return false;
 		}

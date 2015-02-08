@@ -706,6 +706,42 @@ $globals.DebugErrorHandler.klass);
 $core.addClass('SourceArea', $globals.Widget, ['editor', 'div', 'receiver', 'onDoIt'], 'MinimalIDE');
 $core.addMethod(
 $core.method({
+selector: "browseIt",
+protocol: 'actions',
+fn: function (){
+var self=this;
+var result;
+function $Browser(){return $globals.Browser||(typeof Browser=="undefined"?nil:Browser)}
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+return $core.withContext(function($ctx1) {
+//>>excludeEnd("ctx");
+var $1;
+result=self._doIt();
+$1=$recv(result)._isClass();
+if($core.assert($1)){
+$recv($Browser())._openOn_(result);
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+$ctx1.sendIdx["openOn:"]=1;
+//>>excludeEnd("ctx");
+} else {
+$recv($Browser())._openOn_($recv(result)._class());
+};
+return self;
+//>>excludeStart("ctx", pragmas.excludeDebugContexts);
+}, function($ctx1) {$ctx1.fill(self,"browseIt",{result:result},$globals.SourceArea)});
+//>>excludeEnd("ctx");
+},
+//>>excludeStart("ide", pragmas.excludeIdeData);
+args: [],
+source: "browseIt\x0a\x09| result |\x0a\x09\x0a\x09result := self doIt.\x0a\x09result isClass\x0a\x09\x09ifTrue: [ Browser openOn: result ]\x0a\x09\x09ifFalse: [ Browser openOn: result class ]",
+referencedClasses: ["Browser"],
+//>>excludeEnd("ide");
+messageSends: ["doIt", "ifTrue:ifFalse:", "isClass", "openOn:", "class"]
+}),
+$globals.SourceArea);
+
+$core.addMethod(
+$core.method({
 selector: "clear",
 protocol: 'actions',
 fn: function (){
@@ -999,6 +1035,11 @@ if(anEvent.ctrlKey) {
 			anEvent.preventDefault();
 			return false;
 		}
+		if(anEvent.keyCode === 66) { //ctrl+b
+			self._browseIt();
+			anEvent.preventDefault();
+			return false;
+		}
 	};
 return self;
 //>>excludeStart("ctx", pragmas.excludeDebugContexts);
@@ -1007,7 +1048,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: ["anEvent"],
-source: "handleKeyDown: anEvent\x0a\x09<if(anEvent.ctrlKey) {\x0a\x09\x09if(anEvent.keyCode === 80) { //ctrl+p\x0a\x09\x09\x09self._printIt();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09\x09if(anEvent.keyCode === 68) { //ctrl+d\x0a\x09\x09\x09self._doIt();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09\x09if(anEvent.keyCode === 73) { //ctrl+i\x0a\x09\x09\x09self._inspectIt();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09\x09if(anEvent.keyCode === 87) { //ctrl+w\x0a\x09\x09\x09self._closeTab();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09\x09if(anEvent.keyCode === 70) { //ctrl+f\x0a\x09\x09\x09self._search();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09}>",
+source: "handleKeyDown: anEvent\x0a\x09<if(anEvent.ctrlKey) {\x0a\x09\x09if(anEvent.keyCode === 80) { //ctrl+p\x0a\x09\x09\x09self._printIt();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09\x09if(anEvent.keyCode === 68) { //ctrl+d\x0a\x09\x09\x09self._doIt();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09\x09if(anEvent.keyCode === 73) { //ctrl+i\x0a\x09\x09\x09self._inspectIt();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09\x09if(anEvent.keyCode === 87) { //ctrl+w\x0a\x09\x09\x09self._closeTab();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09\x09if(anEvent.keyCode === 70) { //ctrl+f\x0a\x09\x09\x09self._search();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09\x09if(anEvent.keyCode === 66) { //ctrl+b\x0a\x09\x09\x09self._browseIt();\x0a\x09\x09\x09anEvent.preventDefault();\x0a\x09\x09\x09return false;\x0a\x09\x09}\x0a\x09}>",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: []

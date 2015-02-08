@@ -1,5 +1,6 @@
 {
     "paths": {
-        "amber-minimal-ide": "src"
+        "amber-minimal-ide": "src",
+        "amber-minimal-ide/resources": "resources"
     }
 }

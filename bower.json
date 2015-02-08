@@ -33,7 +33,5 @@
         "require-css": "^0.1.2"
     },
     "devDependencies": {
-        "amber-ide-starter-dialog": "^0.1.0",
-        "helios": "^0.3.0"
     }
 }

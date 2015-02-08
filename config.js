@@ -19,7 +19,8 @@ require.config({
     "amber-ide-starter-dialog": "bower_components/amber-ide-starter-dialog/lib/idestarter",
     "amber": "bower_components/amber/support",
     "amber_core": "bower_components/amber/src",
-    "amber-minimal-ide": "src"
+    "amber-minimal-ide": "src",
+    "amber-minimal-ide/resources": "resources"
   },
   "rjs_comment1": "require.min should be removed",
   "rjs_comment2": "it's backward compatibility hack if config finds",
@@ -33,11 +34,13 @@ require.config({
   "shim": {
     "jquery-ui": {
       "deps": [
+        "jquery",
         "jquery"
       ]
     },
     "codemirror/lib/codemirror": {
       "deps": [
+        "css!codemirror/lib/codemirror",
         "css!codemirror/lib/codemirror"
       ]
     },

@@ -10,14 +10,17 @@
 
   <body>
 
+    <a id="legacy"
+        onclick="require('amber/helpers').globals.Browser._open()"
+        style="position: fixed; bottom: 0; right: 0; opacity: 0.5; padding: 10px; background-color: #fff">Open IDE</a>
+
     <script type='text/javascript'>
         require(['app'], function (amber) {
             amber.initialize({
               //used for all new packages in IDE
               'transport.defaultAmdNamespace': "amber-minimal-ide"
             });
-            require(["amber-ide-starter-dialog"], function (dlg) { dlg.start(); });
-            amber.globals.MinimalIDE._start();
+            // amber.globals.Browser._open();
         });
     </script>
   </body>

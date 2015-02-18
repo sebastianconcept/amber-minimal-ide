@@ -1,7 +1,7 @@
 {
     "name": "minimal-ide",
     "description": "A fork of the Legacy IDE",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "ignore": [
         "**/.*",
         "node_modules",
@@ -20,14 +20,15 @@
     "homepage": "https://github.com/sebastianconcept/amber-minimal-ide",
     "keywords": [
         "Amber",
-        "Smalltalk"
+        "Smalltalk",
+        "IDE"
     ],
     "license": [
         "MIT"
     ],
     "private": false,
     "dependencies": {
-        "amber": ">=0.14.4",
+        "amber": "^0.14.10",
         "jquery-ui": ">=1.9.2",
         "codemirror": "^4.7.0",
         "require-css": "^0.1.2"

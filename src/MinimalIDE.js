@@ -2,7 +2,7 @@ define("amber-minimal-ide/MinimalIDE", ["amber/boot"
 //>>excludeStart("imports", pragmas.excludeImports);
 , "codemirror/addon/hint/show-hint", "codemirror/lib/codemirror", "codemirror/mode/smalltalk/smalltalk", "css!./resources/amber", "css!codemirror/addon/hint/show-hint", "css!codemirror/lib/codemirror", "css!resources/minimal-light", "jquery-ui"
 //>>excludeEnd("imports");
-, "amber_core/Web", "amber_core/Kernel-Objects", "amber_core/Kernel-Collections", "amber_core/Kernel-Methods"], function($boot
+, "amber-contrib-web/Web", "amber_core/Kernel-Objects", "amber_core/Kernel-Collections", "amber_core/Kernel-Methods"], function($boot
 //>>excludeStart("imports", pragmas.excludeImports);
 
 //>>excludeEnd("imports");
@@ -1400,7 +1400,7 @@ return self;
 },
 //>>excludeStart("ide", pragmas.excludeIdeData);
 args: [],
-source: "search\x0a\x0a\x09'#search' asJQuery focus\x0a\x09\x0a\x09",
+source: "search\x0a\x0a\x09'#search' asJQuery focus",
 referencedClasses: [],
 //>>excludeEnd("ide");
 messageSends: ["focus", "asJQuery"]

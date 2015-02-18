@@ -8,6 +8,8 @@ require.config({
     "require-css": "bower_components/require-css",
     "jquery-ui": "bower_components/jquery-ui/jquery-ui",
     "codemirror": "bower_components/codemirror",
+    "amber-contrib-web": "bower_components/amber/contrib/src",
+    "amber-contrib-jquery": "bower_components/amber/contrib/src",
     "amber": "bower_components/amber/support",
     "amber_core": "bower_components/amber/src",
     "amber-minimal-ide": "src",
@@ -15,7 +17,11 @@ require.config({
   },
   "map": {
     "*": {
-      "css": "require-css/css"
+      "css": "require-css/css",
+      "00comment": "These are backward compatibility pointers.",
+      "amber_core/Kernel-ImportExport": "amber_core/Platform-ImportExport",
+      "amber_core/Web": "amber-contrib-web/Web",
+      "amber_core/Canvas": "amber-contrib-web/Web"
     }
   },
   "shim": {

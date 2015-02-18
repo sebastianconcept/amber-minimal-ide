@@ -1,5 +1,5 @@
 Smalltalk createPackage: 'MinimalIDE'!
-(Smalltalk packageAt: 'MinimalIDE') imports: {'codemirror/addon/hint/show-hint'. 'codemirror/lib/codemirror'. 'codemirror/mode/smalltalk/smalltalk'. 'css!./resources/amber'. 'css!codemirror/addon/hint/show-hint'. 'css!codemirror/lib/codemirror'. 'css!resources/minimal-light'. 'jquery-ui'}!
+(Smalltalk packageAt: 'MinimalIDE') imports: {'codemirror/addon/hint/show-hint'. 'codemirror/lib/codemirror'. 'codemirror/mode/smalltalk/smalltalk'. 'css!!./resources/amber'. 'css!!codemirror/addon/hint/show-hint'. 'css!!codemirror/lib/codemirror'. 'css!!resources/minimal-light'. 'jquery-ui'}!
 Widget subclass: #ClassesList
 	instanceVariableNames: 'browser ul nodes'
 	package: 'MinimalIDE'!

@@ -28,7 +28,7 @@ module.exports = function (grunt) {
         amberc: {
             options: {
                 amber_dir: path.join(__dirname, "bower_components", "amber"),
-                library_dirs: ['src'],
+                library_dirs: ['src', 'bower_components/amber/contrib/src'],
                 closure_jar: ''
             },
             all: {
@@ -36,7 +36,13 @@ module.exports = function (grunt) {
                     'src/MinimalIDE.st' // list all sources in dependency order
                 ],
                 amd_namespace: 'amber-minimal-ide',
-                libraries: ['SUnit', 'Web']
+                libraries: ['SUnit', 'Web'],
+                options: {
+                   library_dirs: [
+                       'src', 
+                       'bower_components/amber/contrib/src' ], 
+                   verbose: true
+                 }                    
             },
             test_runner: {
                 src: ['node_modules/amber-dev/lib/Test.st'],
